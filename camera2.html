@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+    <style>
+        /* Add some basic styling for better presentation */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: lightskyblue;
+            color: blue;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="paymentForm">
+        <label for="phone Number">phone Number:</label>
+        <input type="text" id="phone number" name="phone Number" placeholder="0723963364" required>
+
+       <select id="paymentMethod" name="paymentMethod" required>
+            <option value="creditCard">safaricom</option>
+            <option value="paypal">airtel</option>
+            <!-- Add more payment options as needed -->
+        </select>
+
+
+        <label for="billingAddress">Billing Address:</label>
+        <input type="text" id="billingAddress" name="billingAddress" placeholder="county ,constitency ,village" required>
+
+        <button type="button" onclick="submitPayment()">Submit Payment</button>
+    </form>
+
+    <script>
+        function submitPayment() {
+            // Add your payment processing logic here
+
+    function submitPayment() {
+        // Collect form data
+        var phoneNumber = document.getElementById('phone Number').value;
+        var paymentMethod = document.getElementById('paymentMethod').value;
+        var billingAddress = document.getElementById('billingAddress').value;
+
+        // Simulate a payment processing request (replace this with actual API calls)
+        var paymentData = {
+            phoneNumber: phoneNumber,
+            paymentMethod: paymentMethod,
+            billingAddress: billingAddress
+        };
+
+        // Simulate a request to a payment gateway (replace this with actual API calls)
+        simulatePaymentRequest(paymentData);
+        
+    }
+
+    function simulatePaymentRequest(paymentData) {
+        // Simulate a request to a server (replace this with actual API calls)
+        // Assume a successful response for demonstration purposes
+        alert('Simulated payment processing successful!\nPayment details:\n' + JSON.stringify(paymentData));
+    }
+
+            alert('Payment submitted successfully!');
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card</title>
+    <link rel="stylesheet" href="4.css">
+</head>
+<body>
+    <div class="profile-card" id="profileCard">
+        <img src="avatar.jpg" alt="Profile Picture" id="profilePicture">
+        <h1 id="name">John Doe</h1>
+        <p id="bio">Web Developer</p>
+        <button onclick="toggleBio()">Show Bio</button>
+    </div>
+
+    <script src="script.js">
+        let bioVisible = false;
+
+function toggleBio() {
+    const bioParagraph = document.getElementById('bio');
+    const buttonText = document.querySelector('button');
+
+    bioVisible = !bioVisible;
+
+    if (bioVisible) {
+        bioParagraph.style.display = 'block';
+        buttonText.textContent = 'Hide Bio';
+    } else {
+        bioParagraph.style.display = 'none';
+        buttonText.textContent = 'Show Bio';
+    }
+}
+
+    </script>
+</body>
+</html>

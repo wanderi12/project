@@ -1,0 +1,63 @@
+<html>
+<head>
+	<title>
+		rylewaterslimited
+	</title>
+	<link rel="stylesheet"type="text/css"href="userinterface.css">
+	<style>
+		button {
+            background-color:greenyellow ;
+            color: blue;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 25px;
+        }
+        button:hover
+        {
+        	background-color:goldenrod ;
+        }
+	</style>
+</head>
+<body>
+<h1 class="h1"><center>Ryle Waters Limited</center></h1>
+<form action="submit.php"method="post">
+<div class="card-container">
+ 
+    <div id="profile-image">
+
+       <center>
+        <img class="user-image"id="profile-img" src="default-profile-picture.jpg" alt="choose your profile-pic">
+   
+        <input type="file"class="input" id="profile-picture-input" accept="image/*"placeholder="change pic"name="pic">
+        <input type="text" name="name"class="email"placeholder="josephben">
+        <input type="text" name="email"class="email"placeholder="josephben@gmail.com"><br>
+        <button onclick="action">submit profile</button>
+       </center>
+    </div>
+</form>
+    <script>
+        document.getElementById('profile-picture-input').addEventListener('change', handleProfilePicture);
+
+        function handleProfilePicture() {
+            const input = document.getElementById('profile-picture-input');
+            const image = document.getElementById('profile-img');
+
+            // Check if a file is selected
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    // Update the image source with the selected file
+                    image.src = e.target.result;
+                };
+
+                // Read the selected file as a data URL
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+</div>
+</body>
+</html>
